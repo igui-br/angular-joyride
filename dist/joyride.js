@@ -53,7 +53,7 @@ function scrollToElement(hash, to) {
           var val = easeInOutQuad(currentTime, start, change, duration);
           window.scrollTo(0, val);
           if (hash !== undefined) {
-              document.getElementById(hash).scrollTop = val;
+              document.getElementById(hash).scrollTop = val - document.getElementById(hash).offsetTop;
           } else {
               window.scrollTo(0, val);
           }
